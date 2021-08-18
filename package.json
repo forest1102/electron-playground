@@ -1,0 +1,58 @@
+{
+  "name": "react-typescript-electron-template",
+  "version": "1.0.0",
+  "description": "React + TypeScript + Electron template",
+  "main": "dist/main/main.js",
+  "scripts": {
+    "dev": "run-p dev:build-react-server dev:start",
+    "dev:build-react-server": "cross-env NODE_ENV=\"development\" webpack-cli serve --config ./.config/webpack.react.ts",
+    "dev:start": "run-s clean typed-css dev:build serve",
+    "dev:build": "cross-env NODE_ENV=\"development\" webpack --progress",
+    "start": "run-s clean typed-css build serve",
+    "build": "cross-env NODE_ENV=\"production\" webpack --progress",
+    "typed-css": "tcm src",
+    "clean": "rimraf dist",
+    "serve": "electron ."
+  },
+  "author": "DongHeon Lee <niche3600@gmail.com> (https://github.com/leeddhh)",
+  "license": "MIT",
+  "engines": {
+    "npm": "❗❗PLEASE, USE YARN INSTEAD❗❗"
+  },
+  "devDependencies": {
+    "@types/copy-webpack-plugin": "^8.0.0",
+    "@types/html-webpack-plugin": "^3.2.5",
+    "@types/mini-css-extract-plugin": "^1.4.2",
+    "@types/node": "^15.0.1",
+    "@types/react": "^17.0.4",
+    "@types/react-dom": "^17.0.3",
+    "@types/webpack-dev-server": "^3.11.3",
+    "@typescript-eslint/eslint-plugin": "^4.22.0",
+    "@typescript-eslint/parser": "^4.22.0",
+    "copy-webpack-plugin": "^8.1.1",
+    "cross-env": "^7.0.3",
+    "css-loader": "^5.2.4",
+    "electron": "^12.0.5",
+    "electron-devtools-installer": "^3.2.0",
+    "eslint": "^7.25.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "html-webpack-plugin": "^5.3.1",
+    "mini-css-extract-plugin": "^1.6.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.2.1",
+    "rimraf": "^3.0.2",
+    "ts-loader": "^9.1.1",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.4",
+    "webpack": "^5.36.2",
+    "webpack-cli": "^4.6.0",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "reseter.css": "^1.1.2"
+  }
+}
